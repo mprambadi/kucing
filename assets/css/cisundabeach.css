@@ -1,0 +1,412 @@
+	::selection{ background-color		: #E13300; color: white; }
+	::moz-selection{ background-color	: #E13300; color: white; }
+	::webkit-selection{ background-color: #E13300; color: white; }
+
+	body {
+		background-color	: #fff;
+		margin				: 1px;
+		color				: #4F5155;
+		border 				: 0px solid red;
+	}
+	
+	a {
+		color				: white;
+		background-color	: transparent;
+		font-weight			: normal;
+		text-decoration		: none;
+	}
+
+	a.satu {
+		color				: #FFBB33;
+	}
+
+	h1 {
+		color				: #444;
+		background-color	: transparent;
+		border-bottom		: 0px solid #D0D0D0;
+		font-size			: 19px;
+		font-weight			: normal;
+		margin				: 0 0 14px 0;
+		padding				: 14px 15px 10px 15px;
+	}
+	
+	h2 {
+		font-family			: Segoe UI Light;
+		color	: #FFBB33;
+		margin	: 15px 0 0 10px;
+	}
+	
+	img.displayed{
+					
+		display				: inline;
+		height				: 200px;
+		width				: 200px;
+		margin				: 25px 0 0 25px;
+	}
+	
+	#container{
+		background 			: url('../img/BatuKarasPangandaran.JPG') no-repeat;
+		background-size 	: 100% 100%;
+		width 				: 100%;
+		height 				: 1000px;
+		border				: 0px solid red;
+		-webkit-box-shadow	: 0 0 8px #D0D0D0;
+	}
+	
+	code {
+		float				: left;
+		font-family			: Segoe UI Light;
+		font-size			: 20px;
+		background-color	: transparent;
+		border				: 0px solid red;
+		color				: #002166;
+		display				: block;
+		padding				: 12px 10px 12px 10px;
+	}
+	
+	#search {
+		width				: 300px;
+		height				: auto;
+		border				: 0px solid red;
+		float				: right;
+		padding				: 12px 0 12px 12px;
+	}
+
+	
+	#container2{
+		
+		clear				: both;
+		margin				: 10px;
+		border				: 0px solid red;
+		-webkit-box-shadow	: 0 0 8px #D0D0D0;
+	}
+	
+	code2 {
+		float				: left;
+		clear				: both;
+		width				: auto;
+		height				: auto;		
+		background-color	: white;
+		border				: 0px solid red;
+		display				: block;
+	}
+	
+	img.header{
+					
+		display				: inline;
+		width				: 40%;
+		height				: 150%;
+		border				: 0px solid red;
+		margin				: 5px 0 0 0;
+	}
+	
+	#widgetContainer {
+		float				: right;
+		width				: 300px;
+		height				: 50px;
+		border				: 1px solid red;
+		margin				: 5px 0 0 0;
+	}
+	
+	#imageHome{	
+		
+		clear				: both;
+		background 			: url('../img/01-home.png') no-repeat;
+		background-size		: 75% 85%;
+		background-position : center;
+		width 				: 100%;
+		height 				: 500px;
+		border				: 0px solid blue;
+		
+	}
+	
+	#wadahButton{
+		
+		width				: auto;
+		height				: 250px;
+		border				: 0px solid red;
+	}
+		
+	#button{
+		
+		margin-left			: 150px;
+		float				: left;
+		width				: 250px;
+		height				: 100%;
+		border				: 0px solid red;
+	}
+	
+	#services{
+		background 			: url('../img/service_logo.png') no-repeat;
+		background-size		: 40% 100%;
+		background-position : center;
+		width				: auto;
+		height				: 100px;
+		margin				: 50px;
+		border				: 0px solid red;
+	}
+	
+	#serviceImage{
+		background 			: url('../img/g3839_PS.png') no-repeat;
+		background-size		: 100% 100%;
+		background-position : center;
+		width				: auto;
+		height				: 800px;
+		margin				: 1px;
+		border				: 0px solid red;
+	
+	}
+	
+	#containerService{
+		margin				: 10px;
+		width				: 35%;
+		height				: 100%;
+		border				: 0px solid red;
+	}
+	
+	#buttonService{
+		
+		padding				: 50% 0% 0 25%;
+		float				: left;
+		width				: 250px;
+		height				: 100%;
+		border				: 0px solid red;
+	}
+	
+	#custom{
+		background 			: url('../img/Custom_Logo.png') no-repeat;
+		background-size		: 50% 100%;
+		background-position : center;
+		width				: auto;
+		height				: 100px;
+		margin				: 50px;
+		border				: 0px solid red;
+	}
+	
+	#customImage{
+		background 			: url('../img/g3936.png') no-repeat;
+		background-size		: 100% 100%;
+		width				: auto;
+		height				: 750px;
+		border				: 0px solid red;
+	
+	}
+	
+	#stories{
+		background 			: url('../img/g3027.png') no-repeat;
+		background-size		: 45% 100%;
+		background-position : center;
+		width				: auto;
+		height				: 100px;
+		margin				: 40px;
+		border				: 0px solid red;
+	}
+	
+	#storiesImage{
+		background 			: url('../img/g3852.png') no-repeat;
+		background-size		: 100% 100%;
+		width				: auto;
+		height				: 400px;
+		margin				: 1px;
+		border				: 0px solid red;
+	
+	}
+	
+	#isiStories{
+		width				: auto;
+		height				: 200px;
+		border				: 1px solid red;
+	}
+	
+	#riverside{
+		background 			: ;
+		background-size		: 100% 100%;
+		width				: auto;
+		height				: 400px;
+		margin				: 1px;
+		border				: 1px solid red;
+	
+	}
+	
+	#containerSubs{
+		background-color	: #4D4D4D;
+		background-size		: 100%;
+		width				: auto;
+		height				: 450px;
+		margin				: 1px;
+		border				: 0px solid red;
+	}
+	
+	#subs{
+		background-size		: 100%;
+		width				: auto;
+		height				: auto;
+		margin				: 1px;
+		border				: 0px solid cyan;
+	}
+	
+	#formSubs{
+		
+		float				: left;
+		width				: 50%;
+		height				: auto;
+		margin				: 0px;
+		border				: 0px solid yellow;
+	}
+	
+	.wrap{
+		width				: 350px;
+		height				: auto;
+		float				: left;
+		margin-left			: 300px;
+		border-radius		: 5px;
+		box-shadow			: 0px 0px 0px #000;
+		border				: 0px solid #DBDCD6;
+	}
+	
+	.wrap .head{
+		width				: 330px;
+		height				: auto;
+		padding				: 10px;
+		font-size			: 19px;
+		color				: #333;
+		float				: left;
+		font-weight			: bold;
+		text-align			: center;
+		border-bottom		: 0px solid #DBDCD6;
+	}
+	
+	.wrap .form{
+		width				: 330px;
+		height				: auto;
+		padding				: 20px 10px;
+		text-align			: center;
+	}
+	
+	.wrap .form form{
+		margin				: 0;
+		color				: #555;
+		font-weight			: bold;
+	}
+	
+	.wrap .form input[type="text"],.form input[type="email"],.wrap .form input[type="password"]{
+		width				: 300px;
+		height				: auto;
+		padding				: 10px;
+		border				: 1px solid #ccc;
+		text-align			: center;
+		background			: #fff;
+		box-shadow			: inset 0px 3px 5px #CBCCC4;
+		border-radius		: 5px;
+	}
+	
+	.wrap .form input[type="text"]:focus,.wrap .form input[type="password"]:focus{
+		width				: 300px;
+		height				: auto;
+		padding				: 10px;
+		border				: 1px solid #BCBCBC;
+		text-align			: center;
+		outline				: none;
+		box-shadow			: inset 0px 3px 5px #999C8B;
+		background			: #fff;
+	}
+	
+	.wrap .form input[type="submit"]{
+	
+		width				: 300px;
+		height				: auto;
+		background-color	: black; 
+		border				: 0px solid #BFC1B7;
+		padding				: 5px 10px;
+		border-radius		: 3px;
+		color				: white;
+		font-weight			: bold;
+		margin-top			: 5px;
+	}
+	
+	.wrap .form input[type="submit"]:hover{
+	
+		color				: #FFD500;
+		cursor				: pointer;
+		box-shadow			: 0px 0px 7px #AAE8F4;
+	}
+	
+	
+	.wrap .footer{
+		width				: 330px;
+		height				: auto;
+		padding				: 8px 10px;
+		font-size			: 11px;
+		color				: #333;
+		float				: left;
+		background			: #EFF0EC;
+		text-align			: center;
+		border-top			: 0px solid #fff;
+	}
+	
+	#formSubsKanan{
+		
+		float				: right;
+		width				: 49%;
+		height				: 300px;
+		margin				: 0px;
+		border				: 0px solid yellow;
+	}
+	
+	#body{
+		margin				: 0 15px 0 15px;
+	}
+	
+	p.empat {
+		
+		font-family			: Segoe UI Light;
+		color				: white;
+		font-size			: 30px;
+		text-align			: left;
+		margin				: 15px 0 0 65px;
+	}
+	
+	p.footer{
+		text-align			: right;
+		font-size			: 11px;
+		border-top			: 0px solid red;
+		line-height			: 32px;
+		padding				: 0 10px 0 10px;
+		margin				: 20px 0 0 0;
+	}
+	
+	nav ul {
+	
+		margin				:0; 
+		padding				:0;
+		
+	
+	}
+	nav ul li {
+	
+		display				:inline-block; 
+		margin				:5px;
+		text-decoration		:none;
+		text-color			:white;
+	}
+	
+	footer {
+		
+		float				: left;
+		background-color 	: black;
+		width 				: 100%;
+		height 				: 300px;
+		border				: 0px solid red;
+		-webkit-box-shadow	: 0 0 8px #D0D0D0;
+	}
+	
+	footerLagi {
+		
+		float				: right;
+		width 				: 50%;
+		height 				: 300px;
+		border				: 0px solid red;
+		-webkit-box-shadow	: 0 0 8px #D0D0D0;
+	}
+	
+	
