@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Blank Page</title>
+  <title>Sistem Pakar Penyakit Kucing</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -18,6 +18,8 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="<?=base_url()?>assets/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="<?=base_url()?>assets/datatables/print/buttons.dataTables.min.css
+">
   <style type="text/css">
   </style>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -40,9 +42,9 @@
     <!-- Logo -->
     <a href="../../index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b>C</b>AT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg"><b>Penyakit</b>Kucing</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -60,7 +62,7 @@
           <!-- User Account: style can be found in dropdown.less -->
           <!-- Control Sidebar Toggle Button -->
           <li>
-            <a href="#" data-toggle="control-sidebar" data-toggle="tooltip" title="Log Out"><i class="glyphicon glyphicon-off"></i></a>
+            <a href="<?=base_url()?>index.php/master/logout" title="Log Out"><i class="glyphicon glyphicon-off"></i></a>
           </li>
         </ul>
       </div>
@@ -78,13 +80,13 @@
         <div class="pull-left image">
           <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
-        <div class="pull-left info">
+        <!-- <div class="pull-left info">
           <p>Alexander Pierce</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-        </div>
+        </div> -->
       </div>
       <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
+      <!-- <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
           <span class="input-group-btn">
@@ -92,9 +94,11 @@
                 </button>
               </span>
         </div>
-      </form>
+      </form> -->
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
+
+      <?php var_dump($this->session);  ?>
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li <?php if($page=='pasien'){ echo "class='active'";} ?> >

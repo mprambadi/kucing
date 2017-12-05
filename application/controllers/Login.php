@@ -49,13 +49,19 @@ class Login extends CI_Controller {
 		$num_account = count($temp_account);
 		if($num_account > 0){
 			//bila ada set session
-			$array_items = array ('id_admin' => $temp_account->id_admin,
+			$array_items = array (
+									'role' => $temp_account->role,
+									'id_user' => $temp_account->id_user,
 								  'username' => $temp_account->username,
-								  'logged_in' => true);
+									'logged_in' => true
+								);
 			
 			$this->session->set_userdata($array_items);
-			echo "berhasil";
+
+			
+			// echo "berhasil";
 			//die;
+
 			redirect(site_url('Master/index'));
 		} else{
 			

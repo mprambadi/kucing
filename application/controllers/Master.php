@@ -32,6 +32,8 @@ class Master extends CI_Controller {
 
 		redirect(site_url('Master/pasien'));
 		
+
+		
 	}
 	public function pasien()
 	{
@@ -57,6 +59,34 @@ class Master extends CI_Controller {
 		$this->load->view('header',$data);
 		$this->load->view('ras',$content);
 		$this->load->view('footer');
+		$this->load->view('ras_script');
+		
+		
+	}
+
+		public function saveRas(){
+		//var_dump($_REQUEST);die;
+
+		if(!$_REQUEST['id_ras'] || $_REQUEST['id_ras']==0){
+			$data = array(
+				// 'id_pernyakit' => '',
+				'ras' => $_REQUEST['nama_ras'],
+			);
+			$this->Kucing_model->insert_ras_kucing($data);
+		}else{
+			$id = $_REQUEST['id_ras'];
+			$data = array(
+				'ras' => $_REQUEST['nama_ras'],
+			);
+			$this->Kucing_model->update_ras_kucing($data,$id);
+		}
+		redirect(site_url('Master/ras'));
+		
+	}
+	public function deleteRas(){
+		//var_dump($_REQUEST);die;
+		$this->Kucing_model->delete_ras_kucing($_REQUEST['id_ras_del']);
+		redirect(site_url('Master/ras'));
 		
 	}
 	public function gejala()
@@ -86,12 +116,13 @@ class Master extends CI_Controller {
 		$this->load->view('penyakit_script');
 		
 	}
+
 	public function savePenyakit(){
 		//var_dump($_REQUEST);die;
 
 		if(!$_REQUEST['id_pernyakit'] || $_REQUEST['id_pernyakit']==0){
 			$data = array(
-				'id_pernyakit' => '',
+				// 'id_pernyakit' => '',
 				'nama_penyakit' => $_REQUEST['nama_penyakit'],
 			);
 			$this->Kucing_model->insert_penyakit_kucing($data);
@@ -123,8 +154,45 @@ class Master extends CI_Controller {
 		$this->load->view('header',$data);
 		$this->load->view('user',$content);
 		$this->load->view('footer');
+		$this->load->view('user_script');
+		
 		
 	}
+
+	public function saveUser(){
+		//var_dump($_REQUEST);die;
+
+		if(!$_REQUEST['id_user'] || $_REQUEST['id_user']==0){
+			$data = array(
+				// 'id_user' => '',
+				'username' => $_REQUEST['username'],
+				'password' => $_REQUEST['password'],
+				'role'=> 2,
+			);
+			$this->Kucing_model->insert_user($data);
+		}else{
+			$id = $_REQUEST['id_user'];
+			$data = array(
+				'username' => $_REQUEST['username'],
+				'password' => $_REQUEST['password'],				
+			);
+			$this->Kucing_model->update_user($data,$id);
+		}
+		redirect(site_url('Master/user'));
+		
+	}
+	public function deleteUser(){
+		//var_dump($_REQUEST);die;
+		$this->Kucing_model->delete_user($_REQUEST['id_user_del']);
+		redirect(site_url('Master/user'));
+		
+	}
+	public function logout(){
+		
+		$this->session->sess_destroy();
+		redirect(site_url('login'));
+		
+	} 
 	
 }
 /* End of file login.php */

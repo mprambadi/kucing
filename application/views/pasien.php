@@ -8,6 +8,7 @@
                 <th>Ras</th>
                 <th>Warna Bulu</th>
                 <th>Jenis Kelamin</th>
+                <th>Tanggal</th>
             </tr>
         </thead>
         <tbody>
@@ -28,6 +29,7 @@
         			<td><?=$key->ras?></td>
         			<td><?=$key->warna_bulu?></td>
         			<td><?=$key->jenis_kelamin?></td>
+        			<td><?=$key->tanggal_daftar?></td>
         		</tr>
         	<?php
         		$i++;

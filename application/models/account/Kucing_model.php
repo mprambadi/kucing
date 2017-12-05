@@ -44,6 +44,22 @@
 			
 			return $this->db->get();
 		}
+
+			function insert_ras_kucing($data)
+			{
+					$this->db->insert('ras', $data);
+			}
+			function update_ras_kucing($data, $id)
+			{
+					$this->db->where('id_ras', $id);
+					$this->db->update('ras', $data);
+			}	
+			function delete_ras_kucing($id)
+			{
+					$this->db->where('id_ras', $id);
+					$this->db->delete('ras');
+			}
+		
 		//mengambil data penyakit
 		function get_penyakit_kucing(){
 			
@@ -80,6 +96,21 @@
 			$this->db->from('user');
 			$this->db->order_by('username', 'asc');
 			return $this->db->get();
+		}
+		
+		function insert_user($data)
+		{
+				$this->db->insert('user', $data);
+		}
+		function update_user($data, $id)
+		{
+				$this->db->where('id_user', $id);
+				$this->db->update('user', $data);
+		}
+		function delete_user($id)
+		{
+				$this->db->where('id_user', $id);
+				$this->db->delete('user');
 		}
 		
 		//Select data kucing berdasarkan id_kucing
