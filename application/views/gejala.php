@@ -5,7 +5,7 @@
                 <th>No</th>
                 <th>Gejala Penyakit</th>
                 <th>Pertanyaan</th>
-                <th>Aksi</th>
+                <!-- <th>Aksi</th> -->
             </tr>
         </thead>
         <tbody>
@@ -17,7 +17,7 @@
                     <td width="15px"><?=$i?></td>
                     <td><?=$key->nama_gejala?></td>
         			<td><?=$key->daftar_pertanyaan?></td>
-                    <td width="15px"><?=$i?></td>
+                    <!-- <td width="15px"><?=$i?></td> -->
         		</tr>
         	<?php
         		$i++;
