@@ -49,14 +49,20 @@ class Login extends CI_Controller {
 		$num_account = count($temp_account);
 		if($num_account > 0){
 			//bila ada set session
-			$array_items = array ('id_admin' => $temp_account->id_admin,
+			$array_items = array (
+									'role' => $temp_account->role,
+									'iduser' => $temp_account->id_user,
 								  'username' => $temp_account->username,
-								  'logged_in' => true);
+									'logged_in' => TRUE
+								);
 			
 			$this->session->set_userdata($array_items);
-			echo "berhasil";
+
+			// var_dump($this->session);
+			// echo "berhasil";
 			//die;
-			redirect(site_url('Master/index'));
+
+			redirect(site_url('Master'));
 		} else{
 			
 			$this->session->set_flashdata('notification', 'Peringatan : Username dan Password tidak cocok.');

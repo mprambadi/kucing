@@ -32,10 +32,21 @@ class Kucing_controller extends CI_Controller {
 	//Fungsi ini menampilkan halaman default aplikasi, yang berisi form data kucing.
 	public function index()
 	{
+
+		$this->load->view('layout/landing');
+		
+		
+	}
+
+	public function formkucing() 
+	{
 		$data['daftar_gejala'] = $this->Kucing_model->get_pertanyaan()->result();
 		$data['ras'] = $this->Kucing_model->get_ras_kucing()->result();
-		$this->load->view('form_kucing', $data);
-		
+		$this->load->view('layout/header');
+		// $this->load->view('layout/	navbar');
+		$this->load->view('content/user/form_kucing',$data);
+		// $this->load->view('layout/footer');
+			
 	}
 	public function formgejala($id_kucing)
 	{	
@@ -43,7 +54,8 @@ class Kucing_controller extends CI_Controller {
 		$data['daftar_gejala'] = $this->Kucing_model->get_pertanyaan_gejala($id_kucing)->result();
 		$data['id_kucing'] = $id_kucing;
 		//var_dump($data['daftar_gejala']);die;
-		$this->load->view('form_gejala', $data);
+		$this->load->view('layout/header');		
+		$this->load->view('content/user/form_gejala', $data);
 	}
 	public function proses_simpan_perhitungan_sementara()
 	{	
@@ -58,16 +70,12 @@ class Kucing_controller extends CI_Controller {
 		$data['data_kucing'] = $this->Kucing_model->get_data_kucingg($id_kucing);
 		$data['id_kucing'] = $id_kucing;
 		//var_dump($data['penyakit_kucing']); die;
-		$this->load->view('form_hasil_diagnosa', $data);
+		$this->load->view('layout/header');		
+		$this->load->view('content/user/form_hasil_diagnosa', $data);
 	}
 	
 	
-	
-	
-	
-	
-	
-	
+
 	//Fungsi yang menampilkan data pasien yang pernah diperiksa menggunakan aplikasi ini.
 	public function data_pasien_sebelumnya()
 	{
@@ -382,7 +390,7 @@ class Kucing_controller extends CI_Controller {
 			$nilai_ada = (1 + ($m * $p))/(1+$m);
 			$nilai_tidak_ada = (0 + ($m * $p))/(1+$m);
 			
-			echo $nilai_tidak_ada;
+			// echo $nilai_tidak_ada;
 			$hasil = array();
 			//return jumlah penyakit
 			foreach ($jumlah_penyakit_nb as $penyakit){
@@ -410,8 +418,10 @@ class Kucing_controller extends CI_Controller {
 			//return $hasil;
 			$data['array'] = $hasil;
 			$data['array_hasil'] = $data_hasil_cf;
+			$data['data_kucing'] = $this->Kucing_model->get_data_kucingg($id_kucing);
 			$data['id_kucing'] = $id_kucing;
-			$this->load->view('form_hasil_dua_metode', $data);
+			$this->load->view('layout/header');
+			$this->load->view('content/user/form_hasil_dua_metode', $data);
 		
 	}
 	
