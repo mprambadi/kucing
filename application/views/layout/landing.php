@@ -63,7 +63,7 @@
         <div class="intro-text">
           <div class="intro-lead-in">Selamat Datang!</div>
           <div class="intro-lead-in text-uppercase">Sistem Diagnosa Penyakit Kucing</div>
-          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="<?php echo base_url('index.php/Kucing_controller/formkucing');?>">Periksa</a>
+          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="<?php echo base_url('Kucing_controller/formkucing');?>">Periksa</a>
         </div>
       </div>
     </header>
