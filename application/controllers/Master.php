@@ -25,12 +25,20 @@ class Master extends CI_Controller {
 		$this->load->model('account/User_model');
 		$this->load->model('account/Kucing_model');
 		$this->load->library('session');
+
+		// var_dump($this->session);
+		if ($this->session->userdata('logged_in') != TRUE) {
+    	redirect(site_url("login"));
+		}
+
 	}
 	
 	public function index()
 	{
-
-		redirect(site_url('Master/pasien'));
+		if($this->session->role == 1) {
+			redirect(site_url('Master/pasien'));
+		}
+		redirect(site_url('Master/ras'));
 		
 
 		

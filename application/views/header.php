@@ -98,9 +98,10 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
 
-      <?php var_dump($this->session);  ?>
+      
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
+        <?php if($this->session->role == 1):  ?>
         <li <?php if($page=='pasien'){ echo "class='active'";} ?> >
           <a href="<?=base_url()?>index.php/master/pasien">
             <i class="fa fa-check-square-o"></i> <span>Data Pasien</span>
@@ -122,10 +123,27 @@
           </a>
         </li>
         <li <?php if($page=='user'){ echo "class='active'";} ?> >
-          <a href="<?=base_url()?>index.php/master/user">
-            <i class="fa fa-user-plus"></i> <span>User</span>
+            <a href="<?=base_url()?>index.php/master/user">
+                <i class="fa fa-user-plus"></i> <span>User</span>
+              </a>
+            </li>
+        <?php else: ?>
+        <li <?php if($page=='ras'){ echo "class='active'";} ?> >
+          <a href="<?=base_url()?>index.php/master/ras">
+            <i class="fa fa-eye"></i> <span>Ras Kucing</span>
           </a>
         </li>
+        <li <?php if($page=='gejala'){ echo "class='active'";} ?> >
+          <a href="<?=base_url()?>index.php/master/gejala">
+            <i class="fa fa-stethoscope"></i> <span>Gejala</span>
+          </a>
+        </li>
+        <li <?php if($page=='penyakit'){ echo "class='active'";} ?> >
+          <a href="<?=base_url()?>index.php/master/penyakit">
+            <i class="fa fa-medkit"></i> <span>Penyakit</span>
+          </a>
+        </li>
+        <?php endif; ?>
       </ul>
     </section>
     <!-- /.sidebar -->
