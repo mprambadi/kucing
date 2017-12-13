@@ -138,6 +138,7 @@ class Master extends CI_Controller {
 			$id = $_REQUEST['id_pernyakit'];
 			$data = array(
 				'nama_penyakit' => $_REQUEST['nama_penyakit'],
+				'penjelasan_penyakit' => $_REQUEST['penjelasan_penyakit'],
 			);
 			$this->Kucing_model->update_penyakit_kucing($data,$id);
 		}

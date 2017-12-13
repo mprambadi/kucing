@@ -3,6 +3,7 @@
         <thead>
             <tr>
                 <th>No</th>
+                <th>Nama Pemilik</th>
                 <th>Nama Kucing</th>
                 <th>Umur (Tahun)</th>
                 <th>Ras</th>
@@ -18,6 +19,7 @@
         	?>
         		<tr>
         			<td width="15px"><?=$i?></td>
+        			<td><?=$key->nama_user?></td>
         			<td><?=$key->nama_kucing?></td>
         			<td><?php
         				if($key->umur<1){

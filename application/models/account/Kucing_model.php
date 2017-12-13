@@ -69,9 +69,11 @@
 			
 			return $this->db->get();
 		}
+
 		function insert_penyakit_kucing($data){
 			$this->db->insert('penyakit', $data);
 		}
+		
 		function update_penyakit_kucing($data,$id){
 			$this->db->where('id_pernyakit', $id);
 			$this->db->update('penyakit', $data);
@@ -257,6 +259,14 @@
 			return $result=$query->row();
 			
 		}
+
+		function get_data_penyakit($id_penyakit){
+			
+			$query = $this->db->query("SELECT * FROM penyakit where id_pernyakit = '$id_penyakit' "); 
+			
+			return $result=$query->row();
+			
+		}
 		
 		function select_data_urutan($id_gejala_umum, $id_urutan){
 			
@@ -381,9 +391,9 @@
 		}
 		
 		//save data
-		function save_data_kucing($namaKucing, $umur, $ras, $warna_bulu, $jenis_kelamin){
+		function save_data_kucing($namaUser, $namaKucing, $umur, $ras, $warna_bulu, $jenis_kelamin){
 			
-			$query = $this->db->query("INSERT INTO data_kucing (id_kucing, nama_kucing, umur, ras, warna_bulu, jenis_kelamin) VALUES (null, '$namaKucing', '$umur', '$ras', '$warna_bulu', '$jenis_kelamin')");
+			$query = $this->db->query("INSERT INTO data_kucing (id_kucing, 	nama_user, nama_kucing, umur, ras, warna_bulu, jenis_kelamin) VALUES (null, '$namaUser', '$namaKucing', '$umur', '$ras', '$warna_bulu', '$jenis_kelamin')");
 			
 			return $query;
 		}

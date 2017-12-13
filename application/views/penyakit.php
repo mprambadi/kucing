@@ -7,6 +7,7 @@
             <tr>
                 <th>No</th>
                 <th>Penyakit Kucing</th>
+                <th>Penjelasan Penyakit</th>
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -18,9 +19,10 @@
         		<tr>
                     <td width="15px"><?=$i?></td>
         			<td><?=$key->nama_penyakit?></td>
+        			<td><?=$key->penjelasan_penyakit?></td>
                     <td width="100px">
-                        <button class="btn btn-primary" role="button" data-id="<?=$key->id_pernyakit?>" data-nama="<?=$key->nama_penyakit?>" data-target="#modal-default" data-toggle="modal" ><i class="fa fa-edit"></i></button>
-                         <button class="btn btn-danger" role="button" data-id="<?=$key->id_pernyakit?>" data-nama="<?=$key->nama_penyakit?>" data-target="#modal-danger" data-toggle="modal" ><i class="fa fa-trash-o"></i></button>
+                        <button class="btn btn-primary" role="button" data-id="<?=$key->id_pernyakit?>" data-nama="<?=$key->nama_penyakit?>" data-penjelasan="<?=$key->penjelasan_penyakit?>" data-target="#modal-default" data-toggle="modal" ><i class="fa fa-edit"></i></button>
+                         <button class="btn btn-danger" role="button" data-id="<?=$key->id_pernyakit?>" data-nama="<?=$key->nama_penyakit?>" data-penjelasan="<?=$key->penjelasan_penyakit?>" data-target="#modal-danger" data-toggle="modal" ><i class="fa fa-trash-o"></i></button>
                     </td>
         		</tr>
         	<?php
@@ -41,8 +43,17 @@
             <form action="<?=base_url()?>index.php/Master/savePenyakit" method="POST">
                 <div class="modal-body">
                     <input type="hidden" id="id_pernyakit" name="id_pernyakit" value="" />
-                    <div class=".col-xs-12">
-                        <input class="form-control" type="text" id="nama_penyakit" name="nama_penyakit" placeholder="Masukan Nama Penyakit" />    
+                    <div class="form-group">
+                        <div class=".col-xs-12">
+                            <input class="form-control" type="text" id="nama_penyakit" name="nama_penyakit" placeholder="Masukan Nama Penyakit" />    
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class=".col-xs-12">
+                        <textarea class="form-control" rows="" cols="" id="penjelasan_penyakit" name="penjelasan_penyakit" placeholder="Masukan Penjelasan Penyakit">
+                        
+                        </textarea>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">

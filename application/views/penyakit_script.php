@@ -2,11 +2,13 @@
   $('#modal-default').on('show.bs.modal', function(e) {
         if(e.relatedTarget.dataset.id){
           $('#nama_penyakit').val(e.relatedTarget.dataset.nama);
+          $('#penjelasan_penyakit').val(e.relatedTarget.dataset.penjelasan);
           $('#id_pernyakit').val(e.relatedTarget.dataset.id);
         }
     });
   $("#modal-default").on("hidden.bs.modal", function () {
     $('#nama_penyakit').val('');
+    $('#penjelasan_penyakit').val('');
     $('#id_pernyakit').val('');
   });
   $('#modal-danger').on('show.bs.modal', function(e) {
