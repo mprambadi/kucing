@@ -89,6 +89,7 @@ class Kucing_controller extends CI_Controller {
 	public function proses_tambah_data_kucing()
 	{
 		if(!$this->input->post('id_kucing')){
+		$namaUser				= $this->input->post('namaUser');
 		$namaKucing		  = $this->input->post('namaKucing');
 		$umur  		      = $this->input->post('umur');
 		$ras  		      = $this->input->post('ras');
@@ -97,7 +98,7 @@ class Kucing_controller extends CI_Controller {
 		$optradio		  = $this->input->post('optradio2');
 		$optradio2		  = $this->input->post('optradio3');
 		
-		$this->Kucing_model->save_data_kucing($namaKucing, $umur, $ras, $warna_bulu, $jenis_kelamin, $optradio);
+		$this->Kucing_model->save_data_kucing($namaUser, $namaKucing, $umur, $ras, $warna_bulu, $jenis_kelamin, $optradio);
 		
 		$id_kucing = $this->Kucing_model->get_last_id2();
 		
@@ -285,20 +286,14 @@ class Kucing_controller extends CI_Controller {
 		$array_hasil = array();
 		$temp_id_pernyakit = 0;
 		$temp_nama_pernyakit;
+		$temp_penjelasan_pernyakit;
 		/* var_dump($daftar_penyakit);
 		die;
 		 */
 		$index = 0;
 		$prev_cf = 0;
 		//proses perhitungan CF pertama
-		
-		//var_dump($daftar_penyakit); die;
-		
-		foreach ($daftar_penyakit as $a){
-			//echo $a->id_pernyakit." ".$a->nilai_cf ." ". $a->nilai_sementara."<br/>";
-		}
-		
-		
+			
 		
 		//var_dump(count($daftar_penyakit));
 		foreach ($daftar_penyakit as $a){
@@ -306,15 +301,17 @@ class Kucing_controller extends CI_Controller {
 				if($index==0){
 					$temp_id_pernyakit=$a->id_pernyakit;
 					$temp_nama_pernyakit=$a->nama_penyakit;
+					// $temp_penjelasan_pernyakit=$a->penjelasan_penyakit;
 					$prev_cf = $a->nilai_cf * $a->nilai_sementara;
 				} else{
-					$array = array($temp_id_pernyakit, $temp_nama_pernyakit, $prev_cf);	
+					$array = array($temp_id_pernyakit,  $temp_nama_pernyakit, $prev_cf);	
 					array_push($array_hasil, $array);
 					$temp_id_pernyakit=$a->id_pernyakit;
 					$temp_nama_pernyakit=$a->nama_penyakit;
+					// $temp_penjelasan_pernyakit=$a->penjelasan_penyakit;
 					$prev_cf = $a->nilai_cf * $a->nilai_sementara;
 					if($index+1 == count($daftar_penyakit)){
-						$array = array($temp_id_pernyakit, $temp_nama_pernyakit, $prev_cf);	
+						$array = array($temp_id_pernyakit,  $temp_nama_pernyakit, $prev_cf);	
 						array_push($array_hasil, $array);
 					}
 				}
@@ -323,7 +320,7 @@ class Kucing_controller extends CI_Controller {
 				$tf = $prev_cf+(($a->nilai_cf * $a->nilai_sementara)*(1-$prev_cf));
 				$prev_cf = $tf;
 				if($index+1 == count($daftar_penyakit)){
-						$array = array($temp_id_pernyakit, $temp_nama_pernyakit, $prev_cf);	
+						$array = array($temp_id_pernyakit,  $temp_nama_pernyakit, $prev_cf);	
 						array_push($array_hasil, $array);
 					}
 			}			
@@ -408,7 +405,7 @@ class Kucing_controller extends CI_Controller {
 				var_dump($pangkat_nilai_tidak_ada);
 				var_dump($nilai_akhir); die; */
 				
-				$array = array($penyakit->id_pernyakit, $penyakit->nama_penyakit, $nilai_akhir);
+				$array = array($penyakit->id_pernyakit, $penyakit->penjelasan_penyakit, $penyakit->nama_penyakit, $nilai_akhir);
 				array_push($hasil, $array);
 			}
 			
@@ -419,7 +416,9 @@ class Kucing_controller extends CI_Controller {
 			$data['array'] = $hasil;
 			$data['array_hasil'] = $data_hasil_cf;
 			$data['data_kucing'] = $this->Kucing_model->get_data_kucingg($id_kucing);
+			// $data['data_penyakit'] = $this->Kucing_model->get_data_penyakit($id_penyakit);
 			$data['id_kucing'] = $id_kucing;
+			// var_dump($data_hasil_cf);
 			$this->load->view('layout/header');
 			$this->load->view('content/user/form_hasil_dua_metode', $data);
 		

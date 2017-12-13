@@ -18,6 +18,13 @@
             </div>
 
             <div class="form-group row">
+              <label class="control-label col-md-5">Nama Pemilik</label>
+              <div class="col-md-4">
+                <?=$data_kucing->nama_user;?>
+              </div>
+            </div>
+
+            <div class="form-group row">
               <label class="control-label col-md-5">Nama Kucing</label>
               <div class="col-md-4">
                 <?=$data_kucing->nama_kucing;?>
@@ -58,17 +65,19 @@
               ">
 
                 <?php 
-									//var_dump($array); 
+									// var_dump($array); 
 									$temp_cf_tertinggi = 0;
 									$temp_cf_tertinggi_nama_penyakit = 0;
+									$temp_penjelasan_penyakit = 0;
 									
 									foreach($array as $d){
 										
 										//echo $d[1]." ". $d[2];
 										
-										if($temp_cf_tertinggi<=$d[2]){
-											$temp_cf_tertinggi = $d[2];
-											$temp_cf_tertinggi_nama_penyakit = $d[1];	
+										if($temp_cf_tertinggi<=$d[3]){
+											$temp_cf_tertinggi = $d[3];
+											$temp_cf_tertinggi_nama_penyakit = $d[2];	
+											$temp_penjelasan_penyakit = $d[1];	
 											
 										}
 										//var_dump($d[2]); die;
@@ -79,15 +88,19 @@
 									// echo "<h1 class='text-center'>".$temp_cf_tertinggi."</h1>";
 									echo '<br/>';
 									echo "<h1 class='text-center'>".$temp_cf_tertinggi_nama_penyakit."</h1>";
+                  echo "<p class='text-center'>".$temp_penjelasan_penyakit
+                  ."</p>";
 									echo '<br/>';
 									foreach($array as $d){
 										
 										//echo $d[1]." ". $d[2];
 										
-										if($temp_cf_tertinggi<$d[2]){
+										if($temp_cf_tertinggi<$d[3]){
 											echo $d[2];
 											echo '<br/>';
 											echo $d[1];
+											echo '<br/>';
+											echo $d[3];
 											echo '<br/>';
 										}
 										//var_dump($d[2]); die;
@@ -98,6 +111,10 @@
 									 ?>
 
               </div>
+            </div>
+
+            <div>
+
             </div>
             <div class="col-md-12">
               <div class="pull-left">

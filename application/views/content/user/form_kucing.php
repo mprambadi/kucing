@@ -13,6 +13,10 @@
             </div>
             <div class="col-md-4">
               <div class="form-group">
+                <input class="form-control" id="name_user" name="namaUser" type="text" placeholder="Nama Pemilik" required data-validation-required-message="Masukan nama emilik kucing.">
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="form-group">
                 <input class="form-control" id="name" name="namaKucing" type="text" placeholder="Nama Kucing" required data-validation-required-message="Masukan nama kucing anda.">
                 <p class="help-block text-danger"></p>
               </div>
